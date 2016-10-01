@@ -1,39 +1,18 @@
 {
-  "name": "ng2-totp",
-  "version": "0.1.0",
-  "scripts": {
-    "lint": "tslint src/**/*.ts",
-    "test": "tsc && karma start",
-    "postinstall": "typings install",
-    "prepublish": "tsc",
-    "tsc": "tsc",
-    "typings": "typings"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/darkedges/ng2-totp.git"
-  },
   "author": {
     "name": "Nicholas Irving",
     "email": "nirving@darkedges.com"
   },
-  "keywords": [
-    "angular",
-    "angular2"
-  ],
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/darkedges/ng2-totp/issues"
   },
-  "main": "./dist/index.js",
-  "typings": "./dist/index.d.ts",
   "dependencies": {
     "@angular/core": "2.0.0"
   },
   "devDependencies": {
-    "@angular/core": "2.0.0",
     "@angular/common": "2.0.0",
-     "@angular/compiler": "2.0.0",
+    "@angular/compiler": "2.0.0",
+    "@angular/core": "2.0.0",
     "codelyzer": "^0.0.20",
     "rxjs": "5.0.0-beta.12",
     "tslint": "^3.6.0",
@@ -41,7 +20,38 @@
     "typings": "^1.0.4",
     "zone.js": "0.6.21"
   },
+  "directories": {},
   "engines": {
     "node": ">=0.8.0"
-  }
+  },
+  "homepage": "https://github.com/darkedges/ng2-totp#readme",
+  "keywords": [
+    "angular",
+    "angular2"
+  ],
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "maintainers": [
+    {
+      "name": "darkedges",
+      "email": "nirving@darkedges.com"
+    }
+  ],
+  "name": "ng2-totp",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/darkedges/ng2-totp.git"
+  },
+  "scripts": {
+    "lint": "tslint src/**/*.ts",
+    "postinstall": "typings install",
+    "prepublish": "tsc",
+    "test": "tsc && karma start",
+    "tsc": "tsc",
+    "typings": "typings"
+  },
+  "typings": "./dist/index.d.ts",
+  "version": "0.1.0"
 }

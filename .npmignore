@@ -22,3 +22,12 @@ Desktop.ini
 # Mac
 .DS_Store
 **/.DS_Store
+
+# Coverage
+coverage/*
+
+# Test Output
+test-output/*
+
+# typedoc
+doc/*

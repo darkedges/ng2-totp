@@ -24,3 +24,12 @@ Desktop.ini
 
 # Typings
 typings/*
+
+# Coverage
+coverage/*
+
+# Test Output
+test-output/*
+
+# typedoc
+doc/*

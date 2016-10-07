@@ -5,15 +5,13 @@ module.exports = function (config) {
     var appSrcBase = 'dist/';       // app source TS files
     var appAssets = '/base/src/'; // component assets fetched by Angular's compiler
 
-    var testBase = 'testing/';       // transpiled test JS and map files
-    var testSrcBase = 'testing/';       // test source TS files
-
     config.set({
         basePath: '',
         frameworks: ['jasmine'],
         plugins: [
             require('karma-jasmine'),
             require('karma-chrome-launcher'),
+            require('karma-phantomjs-launcher'),
             require('karma-coverage'),
             require('karma-jasmine-html-reporter'), // click "Debug" in browser to see it
             require('karma-htmlfile-reporter') // crashing w/ strange socket error
@@ -29,6 +27,7 @@ module.exports = function (config) {
         },
         files: [
             // System.js for module loading
+            'node_modules/systemjs/dist/system-polyfills.src.js',
             'node_modules/systemjs/dist/system.src.js',
 
             // Polyfills
@@ -59,7 +58,6 @@ module.exports = function (config) {
 
             // transpiled application & spec code paths loaded via module imports
             { pattern: appBase + '**/*.js', included: false, watched: true },
-            { pattern: testBase + '**/*.js', included: false, watched: true },
 
             // Cryptojs
             'node_modules/crypto-js/crypto-js.js',
@@ -71,9 +69,7 @@ module.exports = function (config) {
 
             // Paths for debugging with source maps in dev tools
             { pattern: appSrcBase + '**/*.ts', included: false, watched: false },
-            { pattern: appBase + '**/*.js.map', included: false, watched: false },
-            { pattern: testSrcBase + '**/*.ts', included: false, watched: false },
-            { pattern: testBase + '**/*.js.map', included: false, watched: false }
+            { pattern: appBase + '**/*.js.map', included: false, watched: false }
 
         ],
 
@@ -110,8 +106,8 @@ module.exports = function (config) {
         port: 9876,
         colors: true,
         logLevel: config.LOG_INFO,
-        autoWatch: true,
-        browsers: ['Chrome'],
-        singleRun: false
+        autoWatch: false,
+        browsers: ['PhantomJS'],
+        singleRun: true
     })
 }

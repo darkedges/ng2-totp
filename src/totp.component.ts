@@ -1,6 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Subscription } from "rxjs";
-import { TimerObservable } from "rxjs/observable/TimerObservable";
+import { Observable, Subscription } from "rxjs";
 import * as CryptoJS from 'crypto-js'
 
 /**
@@ -24,7 +23,7 @@ export class TOTPComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.createTOTP("H5UFORDGKVRV4XJOKRVVAYSYFRWCQJJ6");
-    let timer = TimerObservable.create(0, 1000);
+    let timer = Observable.timer(0, 1000);
     this.subscription = timer.subscribe(t => this.calculateNextUpdate(t), e => console.log('onError: %s', e),
       () => console.log('onCompleted'));
   }
@@ -86,6 +85,7 @@ export class TOTPComponent implements OnInit, OnDestroy {
   getOTP(secret: string) {
     try {
       var epoch = Math.round(new Date().getTime() / 1000.0);
+      console.log(epoch);
       var time = this.leftpad(this.dec2hex(Math.floor(epoch / 30)), 16, "0");
       var hexMsg = CryptoJS.enc.Hex.parse(time);
       var hexKey = CryptoJS.enc.Hex.parse(this.base32tohex(secret));

@@ -31,3 +31,5 @@ test-output/*
 
 # typedoc
 doc/*
+
+settings.json

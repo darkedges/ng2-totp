@@ -52,6 +52,10 @@ module.exports = function (config) {
             { pattern: 'node_modules/@angular/**/*.js', included: false, watched: false },
             { pattern: 'node_modules/@angular/**/*.js.map', included: false, watched: false },
 
+            // lodash
+            { pattern: 'node_modules/lodash/**/*.js', included: false, watched: false },
+            { pattern: 'node_modules/lodash/**/*.js.map', included: false, watched: false },
+
             { pattern: 'systemjs.config.js', included: false, watched: false },
             { pattern: 'systemjs.config.extras.js', included: false, watched: false },
             'karma-test-shim.js',
@@ -107,7 +111,7 @@ module.exports = function (config) {
         colors: true,
         logLevel: config.LOG_INFO,
         autoWatch: false,
-        browsers: ['PhantomJS'],
+        browsers: ['Chrome'],
         singleRun: true
     })
 }

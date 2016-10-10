@@ -26,7 +26,8 @@
 
       // other libraries
       'rxjs': 'npm:rxjs',
-      'crypto-js': 'npm:crypto-js'
+      'crypto-js': 'npm:crypto-js',
+      'lodash': 'npm:lodash'
     },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {
@@ -35,12 +36,17 @@
         defaultExtension: 'js'
       },
       rxjs: {
+        main: './Rx.js',
         defaultExtension: 'js'
       },
       'crypto-js': {
-      main: './crypto-js.js',
-      defaultExtension: 'js'
-    },
+        main: './crypto-js.js',
+        defaultExtension: 'js'
+      },
+      lodash: {
+        main: './index.js',
+        defaultExtension: 'js'
+      }
     }
   });
 })(this);

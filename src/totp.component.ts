@@ -14,13 +14,12 @@ import { TOTPService } from './totp.service';
 })
 export class TOTPComponent implements OnInit, OnDestroy {
 
-  @Input() private secret: string;
+  @Input() public secret: string;
   @Output() private tick: number;
   @Output() private TOTP: string
   private subscription: any;
 
   constructor(private totpService: TOTPService) {
-    console.log('TOTPComponent called')
   }
 
   ngOnInit() {
